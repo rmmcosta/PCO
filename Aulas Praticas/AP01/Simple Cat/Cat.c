@@ -1,11 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Animal.c"
+#include "Cat.h"
 
 Cat* newCat(char name[15], int age, float weight, int purrLevel, float fluffiness) {
 	Cat tempCat;
-	tempCat._animal = *newAnimal(name, age, weight);
+	tempCat._name = NULL;
+	tempCat._name = (char*) malloc (sizeof(name)+1);
+	strcpy(tempCat._name,name);
+	tempCat._age = age;
+	tempCat._weight = weight;
 	tempCat._purrLevel = purrLevel;
 	tempCat._fluffiness = fluffiness;
 	tempCat._this = (Cat*) malloc(sizeof(tempCat));
@@ -16,14 +20,15 @@ Cat* newCat(char name[15], int age, float weight, int purrLevel, float fluffines
 
 void destroyCat(Cat *ptrA){
 	Cat c = *ptrA;
-	destroyAnimal(c._animal._this);
 	free(c._this);
 }
 
 int equalsCat(Cat *ptrA1, Cat *ptrA2){
 	Cat a1 = *ptrA1;
 	Cat a2 = *ptrA2;
-	return (	equalsAnimal(a1._animal._this,a2._animal._this)
+	return (	a1._name == a2._name 
+				&& a1._age == a2._age 
+				&& a1._weight == a2._weight 
 				&& a1._purrLevel == a2._purrLevel
 				&& a1._fluffiness == a2._fluffiness
 			) ? 1:0;
@@ -31,17 +36,17 @@ int equalsCat(Cat *ptrA1, Cat *ptrA2){
 
 char* getCatName(Cat *ptrA){
 	Cat c = *ptrA;
-	return getAnimalName(c._animal._this);
+	return c._name;
 }
 
 int getCatAge(Cat *ptrA){
 	Cat c = *ptrA;
-	return getAnimalAge(c._animal._this);
+	return c._age;
 }
 
 float getCatWeight(Cat *ptrA){
 	Cat c = *ptrA;
-	return getAnimalWeight(c._animal._this);
+	return c._weight;
 }
 
 int getCatPurrLevel(Cat *ptrA){
@@ -56,10 +61,12 @@ float getCatFluffiness(Cat *ptrA){
 
 void printCat(Cat *ptrA){
 	Cat c = *ptrA;
-	if(c._animal._name == NULL)
+	if(c._name == NULL)
 		return;
 	printf("\n\n== Cat ==");
-	printAnimal(c._animal._this);
+	printf("\nName: %s", c._name);
+	printf("\nAge: %d", c._age);
+	printf("\nWeight: %.2f", c._weight);
 	printf("\nPurrLevel: %d", c._purrLevel);
 	printf("\nFluffiness: %.2f\n", c._fluffiness);
 }
