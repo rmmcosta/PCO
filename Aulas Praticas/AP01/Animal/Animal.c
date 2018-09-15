@@ -3,7 +3,7 @@
 #include <string.h>
 #include "Animal.h"
 
-Animal* newAnimal(char name[15], int age, int weight) {
+Animal* newAnimal(char name[15], int age, float weight) {
 	Animal tempAnimal;
 	tempAnimal._name = NULL;
 	tempAnimal._name = (char*) malloc (sizeof(name)+1);
