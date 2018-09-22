@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "Cat.h"
-#include "Animal.h"
 
 struct sCat {
 	Animal _animal;
@@ -16,7 +15,7 @@ Cat newCat(char* name, int vel){
 
 void sayMiau(Cat c){
 	Animal a = c->_animal;
-	printf("%s is saying Miauuuuuu...", getName(a));
+	printf("\n%s is saying Miauuuuuu...", getName(a));
 }
 
 void die(Cat c){
@@ -24,7 +23,7 @@ void die(Cat c){
 		case 1:
 			c->_numberOfLifes--;
 		case 0:
-			printf("The cat is dead!");
+			printf("\nThe cat is dead!");
 			break;
 		default:
 			c->_numberOfLifes--;
@@ -32,7 +31,7 @@ void die(Cat c){
 }
 
 void printLifesLeft(Cat c){
-	printf("%d lifes left!",c->_numberOfLifes);
+	printf("\n%d lifes left!",c->_numberOfLifes);
 }
 
 Animal getAnimal(Cat c){
