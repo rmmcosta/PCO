@@ -1,0 +1,1 @@
+void run(char[15] name);

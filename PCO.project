@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="PCO" Version="10.0.0" InternalType="">
+  <VirtualDirectory Name="Aulas Praticas">
+    <File Name="Aulas Praticas/test.c"/>
+    <VirtualDirectory Name="AP01_Testes com LIFO">
+      <File Name="Aulas Praticas/AP01_Testes com LIFO/main.c"/>
+      <File Name="Aulas Praticas/AP01_Testes com LIFO/Animal.h"/>
+      <File Name="Aulas Praticas/AP01_Testes com LIFO/Animal.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="AP01 After seing the solution">
+      <File Name="Aulas Praticas/AP01 After seing the solution/main.c"/>
+      <File Name="Aulas Praticas/AP01 After seing the solution/Animal.h"/>
+      <File Name="Aulas Praticas/AP01 After seing the solution/Animal.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="AP01">
+      <VirtualDirectory Name="Simple Cat">
+        <File Name="Aulas Praticas/AP01/Simple Cat/main.c"/>
+        <File Name="Aulas Praticas/AP01/Simple Cat/Cat.h"/>
+        <File Name="Aulas Praticas/AP01/Simple Cat/Cat.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="Cat">
+        <File Name="Aulas Praticas/AP01/Cat/main.c"/>
+        <File Name="Aulas Praticas/AP01/Cat/Cat.c"/>
+        <File Name="Aulas Praticas/AP01/Cat/Animals.h"/>
+        <File Name="Aulas Praticas/AP01/Cat/Animal.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="Animal">
+        <File Name="Aulas Praticas/AP01/Animal/main.c"/>
+        <File Name="Aulas Praticas/AP01/Animal/Animal.h"/>
+        <File Name="Aulas Praticas/AP01/Animal/Animal.c"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <Settings Type="Executable">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="MinGW ( TDM-GCC-64 )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g -Wall" C_Options="" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="-O0" Required="yes">
+        <LibraryPath Value="."/>
+        <LibraryPath Value="Debug"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="./Debug" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Workspace Settings&gt;" DbgSetName="&lt;Use Global Settings&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>
