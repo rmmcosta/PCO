@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Ricardo
-Date                   :=16/09/2018
+Date                   :=22/09/2018
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=C:/TDM-GCC-64/bin/g++.exe
 SharedObjectLinkerName :=C:/TDM-GCC-64/bin/g++.exe -shared -fPIC
@@ -62,8 +62,8 @@ AS       := C:/TDM-GCC-64/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/Aulas Praticas_AP01_Cat_Cat.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_main.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_main.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_Animal.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Simple Cat_main.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Simple Cat_Cat.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Cat_main.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_test.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Cat_Animal.c$(ObjectSuffix) \
-	$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Animal_main.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Cat_Cat.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_main.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_main.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_Animal.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Simple Cat_main.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Simple Cat_Cat.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Cat_main.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_test.c$(ObjectSuffix) \
+	$(IntermediateDirectory)/Aulas Praticas_AP01_Cat_Animal.c$(ObjectSuffix) $(IntermediateDirectory)/Aulas Praticas_AP01_Animal_main.c$(ObjectSuffix) 
 
 
 
@@ -94,6 +94,14 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(ObjectSuffix): Aulas Praticas/AP01/Animal/Animal.c $(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/Users/Ricardo/IST/PCO/Aulas Praticas/AP01/Animal/Animal.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(DependSuffix): Aulas Praticas/AP01/Animal/Animal.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(DependSuffix) -MM "Aulas Praticas/AP01/Animal/Animal.c"
+
+$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(PreprocessSuffix): Aulas Praticas/AP01/Animal/Animal.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(PreprocessSuffix) "Aulas Praticas/AP01/Animal/Animal.c"
+
 $(IntermediateDirectory)/Aulas Praticas_AP01_Cat_Cat.c$(ObjectSuffix): Aulas Praticas/AP01/Cat/Cat.c $(IntermediateDirectory)/Aulas Praticas_AP01_Cat_Cat.c$(DependSuffix)
 	$(CC) $(SourceSwitch) "C:/Users/Ricardo/IST/PCO/Aulas Praticas/AP01/Cat/Cat.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Aulas Praticas_AP01_Cat_Cat.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Aulas Praticas_AP01_Cat_Cat.c$(DependSuffix): Aulas Praticas/AP01/Cat/Cat.c
@@ -118,14 +126,6 @@ $(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_main.c$(DependSuffi
 $(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_main.c$(PreprocessSuffix): Aulas Praticas/AP01_Testes com LIFO/main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_main.c$(PreprocessSuffix) "Aulas Praticas/AP01_Testes com LIFO/main.c"
 
-$(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(ObjectSuffix): Aulas Praticas/AP01 After seing the solution/Animal.c $(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/Ricardo/IST/PCO/Aulas Praticas/AP01 After seing the solution/Animal.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(DependSuffix): Aulas Praticas/AP01 After seing the solution/Animal.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(DependSuffix) -MM "Aulas Praticas/AP01 After seing the solution/Animal.c"
-
-$(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(PreprocessSuffix): Aulas Praticas/AP01 After seing the solution/Animal.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(PreprocessSuffix) "Aulas Praticas/AP01 After seing the solution/Animal.c"
-
 $(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_Animal.c$(ObjectSuffix): Aulas Praticas/AP01_Testes com LIFO/Animal.c $(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_Animal.c$(DependSuffix)
 	$(CC) $(SourceSwitch) "C:/Users/Ricardo/IST/PCO/Aulas Praticas/AP01_Testes com LIFO/Animal.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_Animal.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_Animal.c$(DependSuffix): Aulas Praticas/AP01_Testes com LIFO/Animal.c
@@ -133,6 +133,14 @@ $(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_Animal.c$(DependSuf
 
 $(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_Animal.c$(PreprocessSuffix): Aulas Praticas/AP01_Testes com LIFO/Animal.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Aulas Praticas_AP01_Testes com LIFO_Animal.c$(PreprocessSuffix) "Aulas Praticas/AP01_Testes com LIFO/Animal.c"
+
+$(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(ObjectSuffix): Aulas Praticas/AP01 After seing the solution/Animal.c $(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/Users/Ricardo/IST/PCO/Aulas Praticas/AP01 After seing the solution/Animal.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(DependSuffix): Aulas Praticas/AP01 After seing the solution/Animal.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(DependSuffix) -MM "Aulas Praticas/AP01 After seing the solution/Animal.c"
+
+$(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(PreprocessSuffix): Aulas Praticas/AP01 After seing the solution/Animal.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Aulas Praticas_AP01 After seing the solution_Animal.c$(PreprocessSuffix) "Aulas Praticas/AP01 After seing the solution/Animal.c"
 
 $(IntermediateDirectory)/Aulas Praticas_AP01_Simple Cat_main.c$(ObjectSuffix): Aulas Praticas/AP01/Simple Cat/main.c $(IntermediateDirectory)/Aulas Praticas_AP01_Simple Cat_main.c$(DependSuffix)
 	$(CC) $(SourceSwitch) "C:/Users/Ricardo/IST/PCO/Aulas Praticas/AP01/Simple Cat/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Aulas Praticas_AP01_Simple Cat_main.c$(ObjectSuffix) $(IncludePath)
@@ -173,14 +181,6 @@ $(IntermediateDirectory)/Aulas Praticas_AP01_Cat_Animal.c$(DependSuffix): Aulas 
 
 $(IntermediateDirectory)/Aulas Praticas_AP01_Cat_Animal.c$(PreprocessSuffix): Aulas Praticas/AP01/Cat/Animal.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Aulas Praticas_AP01_Cat_Animal.c$(PreprocessSuffix) "Aulas Praticas/AP01/Cat/Animal.c"
-
-$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(ObjectSuffix): Aulas Praticas/AP01/Animal/Animal.c $(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/Ricardo/IST/PCO/Aulas Praticas/AP01/Animal/Animal.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(DependSuffix): Aulas Praticas/AP01/Animal/Animal.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(DependSuffix) -MM "Aulas Praticas/AP01/Animal/Animal.c"
-
-$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(PreprocessSuffix): Aulas Praticas/AP01/Animal/Animal.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Aulas Praticas_AP01_Animal_Animal.c$(PreprocessSuffix) "Aulas Praticas/AP01/Animal/Animal.c"
 
 $(IntermediateDirectory)/Aulas Praticas_AP01_Animal_main.c$(ObjectSuffix): Aulas Praticas/AP01/Animal/main.c $(IntermediateDirectory)/Aulas Praticas_AP01_Animal_main.c$(DependSuffix)
 	$(CC) $(SourceSwitch) "C:/Users/Ricardo/IST/PCO/Aulas Praticas/AP01/Animal/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Aulas Praticas_AP01_Animal_main.c$(ObjectSuffix) $(IncludePath)

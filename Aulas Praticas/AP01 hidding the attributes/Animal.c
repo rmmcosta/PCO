@@ -22,3 +22,7 @@ void run(Animal a){
 void setVelocity(Animal a, int vel){
 	a->_velocity = vel;
 }
+
+char* getName(Animal a){
+	return a->_name;
+}
